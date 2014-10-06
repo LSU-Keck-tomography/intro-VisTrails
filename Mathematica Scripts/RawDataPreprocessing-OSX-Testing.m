@@ -182,7 +182,7 @@ ParallelDo[
     absImage = absImage*scale; 
 	absImage = Reverse[Transpose[absImage]]; 
 	(* save absorption image to memory *)
-	allAbs[[j]] = absImage
+	allAbs[[j]] = absImage (*Issue with null was partially solve by adding "First[absImage]", but there were still issues*)
 
     (* write to HDF5 *)
     If[! DirectoryQ[absDir], CreateDirectory[absDir]; ];
@@ -209,6 +209,11 @@ SetDirectory[absDir];
 Print[ToString[Length[FileNames[]]]<>" absorption images created."]
 
 
+(*Fix allAbs after it comes from ParallelDo. 
+After Parallelizing allAbs[[All,All,All,2] = Null*)
+allAbs = allAbs[[All,All,All,1]];
+
+
 (*Timer: get stop time and calculate total run time*)
 t1 = AbsoluteTime[];
 pout["Total run time: "<>ToString[t1-t0]<>" seconds"]
@@ -216,18 +221,6 @@ pout["Total run time: "<>ToString[t1-t0]<>" seconds"]
 
 (*Clear unneeded variables*)
 Clear[allFiles]
-
-
-(*Fix values that came out of the ParallelDo loop. For some reason they come with " Null" appended
-onto the end of the value.*)
-allAbsFix = ConstantArray[0,Dimensions[allAbs]];
-ParallelDo[
-	allAbsFix[[i,j,k]] = ToExpression[StringSplit[ToString[allAbs[[i,j,k]]]," Null"]]
-	,{i,Dimensions[allAbs][[1]]},{j,Dimensions[allAbs][[2]]},{k,Dimensions[allAbs][[3]]}
-]
-
-
-allAbsFix[[1]]
 
 
 (*Create three slices at bottom, top, and middle*)
@@ -239,6 +232,8 @@ NZ = Length[absHDF5FileNames];
 allSinograms = ConstantArray[0, {NY, NX, NZ}];
 
 
+(*
+
 For[projection = 1, projection <= NZ, projection++, 
 	absImage = allAbsFix[[projection]]; 
 	For[row = 1, row <= NY, row++, 
@@ -248,6 +243,8 @@ For[projection = 1, projection <= NZ, projection++,
 
 (*BOOKMARK*)
 (*WHY DOES "Null" APPEAR AFTER THE VALUES OF allAbs*)
+
+*)
 
 
 Dimensions[allSinograms]
