@@ -6,7 +6,7 @@ cd('/Users/les/Dropbox/Papers/Battery_manuscript/PCA_literature/expt_data_croppe
 
 
 % Jinghua's comment Oct 6, 2014
-
+% Les's comment after Jinghua's of Oct 6, 2014
 
 
 info = h5info([pwd,'/../synthetic41_allData.h5']);  
