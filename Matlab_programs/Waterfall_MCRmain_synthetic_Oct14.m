@@ -4,6 +4,11 @@
 clc; clear;
 cd('/Users/les/Dropbox/Papers/Battery_manuscript/PCA_literature/expt_data_cropped/');
 
+
+% Jinghua's comment Oct 6, 2014
+
+
+
 info = h5info([pwd,'/../synthetic41_allData.h5']);  
 info.Datasets.Name;
 allData = h5read([pwd,'/../synthetic41_allData.h5'],'/allData');  
