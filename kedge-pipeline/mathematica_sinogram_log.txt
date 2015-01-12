@@ -1,0 +1,2 @@
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+pathRaw="/melete-nas01/lsu/scratch/kyungmin/Mutairu_Nov2012/D1/FR96D1_12keV/"workDir="/melete-nas01/lsu/scratch/gknapp/FR96D1_12keV_processed"
