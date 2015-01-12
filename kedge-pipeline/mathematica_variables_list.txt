@@ -1,0 +1,2 @@
+/melete-nas01/lsu/scratch/kyungmin/Mutairu_Nov2012/D1/FR96D1_12keV/="pathRaw"
+workDir="/melete-nas01/lsu/scratch/gknapp/FR96D1_12keV_processed"
