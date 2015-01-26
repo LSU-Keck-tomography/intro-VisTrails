@@ -1,2 +1,15 @@
 Pseudo-terminal will not be allocated because stdin is not a terminal.
-pathRaw="/melete-nas01/lsu/scratch/kyungmin/Mutairu_Nov2012/D1/FR96D1_12keV/"workDir="/melete-nas01/lsu/scratch/gknapp/FR96D1_12keV_processed"
+License checkout failed.
+License Manager Error -4
+Maximum number of users for MATLAB reached. 
+Try again later. 
+To see a list of current users use the lmstat utility or contact your License Administrator.
+
+Troubleshoot this issue by visiting: 
+http://www.mathworks.com/support/lme/R2013a/4
+
+Diagnostic Information:
+Feature: MATLAB 
+License path: /home/gknapp/.matlab/R2013a_licenses:/usr/local/packages/matlab2013a/licenses/license.dat:/usr/local
+/packages/matlab2013a/licenses/network.lic 
+Licensing error: -4,132.
