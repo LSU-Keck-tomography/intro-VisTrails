@@ -1,2 +1,2 @@
-pathRaw="/melete-nas01/lsu/scratch/kyungmin/Mutairu_Nov2012/D1/FR96D1_12keV/"
-workDir="/melete-nas01/lsu/scratch/gknapp/VT_TestRun/FR96D1_12keV_processed"
+pathRaw="/melete-nas01/lsu/scratch/kyungmin/Mutairu_Nov2012/FR96D4_32keV/"
+workDir="/melete-nas01/lsu/scratch/gknapp/VT_TestRun/FR96D4_32keV_processed"
